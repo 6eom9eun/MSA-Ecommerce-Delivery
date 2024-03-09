@@ -5,4 +5,3 @@ WORKDIR /boss
 ADD requirements.txt /boss/
 RUN pip install -r requirements.txt
 ADD . /boss/
-CMD python3 main.py

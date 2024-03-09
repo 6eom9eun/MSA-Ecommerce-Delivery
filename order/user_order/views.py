@@ -12,13 +12,13 @@ class ShopViewset(viewsets.ViewSet):
     def list(self, request):    #/api/shop
         shops = Shop.objects.all()
         serializer = ShopSerializer(shops, many=True)
-        publish()
         return Response(serializer.data)
 
     def create(self, request):  #/api/shop
         serializer = ShopSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        publish('shop_created', serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def retrieve(self, request, pk = None):  #/api/shop/<str:idx>
@@ -31,11 +31,13 @@ class ShopViewset(viewsets.ViewSet):
         serializer = ShopSerializer(instance = shop, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        publish('shop_updated', serializer.data)
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk = None):  #/api/shop/<str:idx>
         shop = Shop.objects.get(id=pk)
         shop.delete()
+        publish('shop_deleted', pk)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class OrderViewset(viewsets.ViewSet):
@@ -48,6 +50,7 @@ class OrderViewset(viewsets.ViewSet):
         serializer = OrderSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        publish('order_created', serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def retrieve(self, request, pk = None):  #/api/order/<str:idx>
@@ -60,9 +63,11 @@ class OrderViewset(viewsets.ViewSet):
         serializer = OrderSerializer(instance=order,data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        publish('order_created', serializer.data)
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
     def destroy(self, request, pk = None):  #/api/order/<str:idx>
         order = Order.objects.get(id=pk)
         order.delete()
+        publish('order_deleted', pk)
         return Response(status=status.HTTP_204_NO_CONTENT)    
