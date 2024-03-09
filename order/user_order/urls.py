@@ -8,7 +8,7 @@ urlpatterns = [
     })),
     path('shop/<str:pk>', ShopViewset.as_view({
         'get':'retrieve',
-        'put':'upda  te',
+        'put':'update',
         'delete':'destroy'
     })),
     path('order', OrderViewset.as_view({
