@@ -85,9 +85,9 @@ DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',    
         'NAME': 'msa_study',                  
-        'USER': 'root',                          
-        'PASSWORD': 'qjarms5027',                  
-        'HOST': 'localhost',                     
+        'USER': 'beomgeun',                          
+        'PASSWORD': 'beomgeun',                  
+        'HOST': 'db',                     
         'PORT': '3306',         # 기본 포트 주소                  
     }
 }

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0.36
+    container_name: mysql
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Seoul
+    volumes:
+      - .dbdata:/var/lib/mysql
+      
+  web:
+    image: django:5.0.3
+    container_name: django
+    build: .
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/order
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
