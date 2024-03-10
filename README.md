@@ -4,10 +4,11 @@
 
 ![스크린샷 2024-03-10 10 52 20](https://github.com/6eom9eun/MSA_shopDeliver/assets/104510730/b6dde1ef-6cda-40be-8bcf-594d9d78ffc2)
 
-`Languege : Python`<br>
-`Framework : Django, Flask`<br>
-`DB : MySQL`<br>
-`Technology & Tools : Docker(docker-compose), RabbitMQ(cloudamqp : Little Lemur)`
+- Languege : Python
+- Framework : Django, Flask
+- DB : MySQL
+- Technology & Tools : Docker(docker-compose), RabbitMQ( [cloudamqp](https://www.cloudamqp.com/) : Little Lemur)<br>
+
 
 - ### images<br>
   ![스크린샷 2024-03-09 22 58 26](https://github.com/6eom9eun/msaStudy/assets/104510730/9bd79e44-8d34-4f86-9f5b-549d4039cfa7)
