@@ -5,7 +5,7 @@
 `Languege : Python`<br>
 `Framework : Django, Flask`<br>
 `DB : MySQL`<br>
-`Technology & Tools : Docker, RabbitMQ(cloudamqp : Little Lemur)`
+`Technology & Tools : Docker(docker-compose), RabbitMQ(cloudamqp : Little Lemur)`
 
 - ### images<br>
   ![스크린샷 2024-03-09 22 58 26](https://github.com/6eom9eun/msaStudy/assets/104510730/9bd79e44-8d34-4f86-9f5b-549d4039cfa7)
