@@ -1,5 +1,7 @@
 <h2>[ Django, Flask ] + RabbitMQ, MySQL : MSA</h2>
 
+![스크린샷 2024-03-10 10 52 20](https://github.com/6eom9eun/MSA_shopDeliver/assets/104510730/b6dde1ef-6cda-40be-8bcf-594d9d78ffc2)
+
 `Languege : Python`<br>
 `Framework : Django, Flask`<br>
 `DB : MySQL`<br>
