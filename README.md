@@ -42,7 +42,7 @@
   - 가게 리스트 조회 `GET`
     - Endpoint : localhost:8001/api/shop
   - 특정 가게 조회 `GET`
-    - Endpoint : localhost:8001/api/shop/id
+    - Endpoint : localhost:8001/api/shop/\<id>
   - 특정 주문 배송 완료 처리 `POST`
     - Endpoint : localhost:8001/api/order/\<id>/deliver_finish
 - `필드는 코드에서 확인`
