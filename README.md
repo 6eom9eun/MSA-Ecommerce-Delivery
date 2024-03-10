@@ -13,11 +13,21 @@
   ![스크린샷 2024-03-09 22 58 26](https://github.com/6eom9eun/msaStudy/assets/104510730/9bd79e44-8d34-4f86-9f5b-549d4039cfa7)
 
 - ### Containers<br>
-  <img width="641" alt="스크린샷 2024-03-09 23 00 27" src="https://github.com/6eom9eun/msaStudy/assets/104510730/e250d922-785c-45ea-bd90-898da36da4e1">
+  - docker-compose를 통해 도커라이징
+      - order(Django+MySQL+Producer/Consumer)
+      - boss(Flask+MySQL+Porducer/Consumer)
+        
+        <img width="641" alt="스크린샷 2024-03-09 23 00 27" src="https://github.com/6eom9eun/msaStudy/assets/104510730/e250d922-785c-45ea-bd90-898da36da4e1">
   
-- ### 설명<br>
-   - Django로 상점, 주문 CURD -> 메시지 브로커 -> Flask에 상점, 주문 CRUD
-   - Flask로 주문 배송 완료 처리 U -> 메시지 브로커 -> Django에 주문 완료 처리 U
+- ### What ?<br>
+  - Django
+      - Django 애플리케이션에서는 상점과 주문에 대한 CRUD 작업을 처리합니다.
+      - Django 애플리케이션은 RabbitMQ 큐 'order'에 주문에 대한 메시지를 소비합니다.
+      - 소비된 메시지는 주문 데이터베이스의 해당 주문을 찾아서 배송 완료 상태를 업데이트합니다.
+  - Flask
+      - Flask 애플리케이션은 상점과 주문에 대한 CRUD 작업을 처리합니다.
+      - Flask 애플리케이션은 RabbitMQ 큐 'boss'에 상점과 주문에 대한 메시지를 소비합니다.
+      - 소비된 메시지는 Flask 애플리케이션의 데이터베이스에 상점 및 주문을 생성, 업데이트 또는 삭제합니다.
 
 - ### API (Django)<br>
   - 가게 리스트 조회 `GET`
